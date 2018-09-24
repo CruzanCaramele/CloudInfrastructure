@@ -56,7 +56,7 @@ resource "aws_subnet" "public_bastion_zone_a" {
   }
 }
 
-resource "aws_route_table_association" "public_webserver_zone_b" {
+resource "aws_route_table_association" "public_bastion_zone_a" {
     subet_id = "${aws_subnet.public_bastion_zone_a}"
     route_table_id = "${aws_route_table.public.id}"
 }
@@ -71,7 +71,46 @@ resource "aws_subnet" "public_bastion_zone_b" {
   }
 }
 
-resource "aws_route_table_association" "public_webserver_zone_b" {
+resource "aws_route_table_association" "public_bastion_zone_b" {
     subet_id = "${aws_subnet.public_bastion_zone_b}"
     route_table_id = "${aws_route_table.public.id}"
+}
+
+#---------------------------------------------#
+# Database Servers Subnets #
+#---------------------------------------------#
+resource "aws_subnet" "private_db_zone_a" {
+  vpc_id            = "${aws_vpc.otto_vpc.id}"
+  cidr_block        = "${var.private_subnet_db_a_cidr}"
+  availability_zone = "us-east-1a"
+
+  tags {
+    Name = "Priavte Database Server Zone A"
+  }
+}
+
+resource "aws_route_table_association" "private_db_zone_a" {
+    subet_id = "${aws_subnet.private_db_zone_a}"
+    route_table_id = "${aws_route_table.private.id}"
+}
+
+resource "aws_subnet" "private_db_zone_b" {
+  vpc_id            = "${aws_vpc.otto_vpc.id}"
+  cidr_block        = "${var.private_subnet_db_b_cidr}"
+  availability_zone = "us-east-1b"
+
+  tags {
+    Name = "Priavte Database Server Zone B"
+  }
+}
+
+resource "aws_route_table_association" "private_db_zone_b" {
+    subet_id = "${aws_subnet.private_db_zone_b}"
+    route_table_id = "${aws_route_table.private.id}"
+}
+
+resource "aws_db_subnet" "database" {
+  name = "database"
+  descriotion = "main group subnets"
+  subnet_ids = ["${aws_subnet.private_db_zone_a.id}", "${aws_subnet.private_db_zone_b.id}"]
 }
