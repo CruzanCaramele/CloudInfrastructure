@@ -21,8 +21,8 @@ resource "aws_subnet" "public_webserver_zone_a" {
 }
 
 resource "aws_route_table_association" "public_webserver_zone_a" {
-    subet_id = "${aws_subnet.public_webserver_zone_a.id}"
-    route_table_id = "${aws_route_table.public.id}"
+  subet_id       = "${aws_subnet.public_webserver_zone_a.id}"
+  route_table_id = "${aws_route_table.public.id}"
 }
 
 #---------------------------------------------#
@@ -39,8 +39,8 @@ resource "aws_subnet" "public_webserver_zone_b" {
 }
 
 resource "aws_route_table_association" "public_webserver_zone_b" {
-    subet_id = "${aws_subnet.public_webserver_zone_b.id}"
-    route_table_id = "${aws_route_table.public.id}"
+  subet_id       = "${aws_subnet.public_webserver_zone_b.id}"
+  route_table_id = "${aws_route_table.public.id}"
 }
 
 #---------------------------------------------#
@@ -57,8 +57,8 @@ resource "aws_subnet" "public_bastion_zone_a" {
 }
 
 resource "aws_route_table_association" "public_bastion_zone_a" {
-    subet_id = "${aws_subnet.public_bastion_zone_a}"
-    route_table_id = "${aws_route_table.public.id}"
+  subet_id       = "${aws_subnet.public_bastion_zone_a}"
+  route_table_id = "${aws_route_table.public.id}"
 }
 
 resource "aws_subnet" "public_bastion_zone_b" {
@@ -72,8 +72,8 @@ resource "aws_subnet" "public_bastion_zone_b" {
 }
 
 resource "aws_route_table_association" "public_bastion_zone_b" {
-    subet_id = "${aws_subnet.public_bastion_zone_b}"
-    route_table_id = "${aws_route_table.public.id}"
+  subet_id       = "${aws_subnet.public_bastion_zone_b}"
+  route_table_id = "${aws_route_table.public.id}"
 }
 
 #---------------------------------------------#
@@ -90,8 +90,8 @@ resource "aws_subnet" "private_db_zone_a" {
 }
 
 resource "aws_route_table_association" "private_db_zone_a" {
-    subet_id = "${aws_subnet.private_db_zone_a}"
-    route_table_id = "${aws_route_table.private.id}"
+  subet_id       = "${aws_subnet.private_db_zone_a}"
+  route_table_id = "${aws_route_table.private.id}"
 }
 
 resource "aws_subnet" "private_db_zone_b" {
@@ -105,12 +105,12 @@ resource "aws_subnet" "private_db_zone_b" {
 }
 
 resource "aws_route_table_association" "private_db_zone_b" {
-    subet_id = "${aws_subnet.private_db_zone_b}"
-    route_table_id = "${aws_route_table.private.id}"
+  subet_id       = "${aws_subnet.private_db_zone_b}"
+  route_table_id = "${aws_route_table.private.id}"
 }
 
 resource "aws_db_subnet" "database" {
-  name = "database"
+  name        = "database"
   descriotion = "main group subnets"
-  subnet_ids = ["${aws_subnet.private_db_zone_a.id}", "${aws_subnet.private_db_zone_b.id}"]
+  subnet_ids  = ["${aws_subnet.private_db_zone_a.id}", "${aws_subnet.private_db_zone_b.id}"]
 }
