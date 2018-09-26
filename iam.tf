@@ -16,6 +16,7 @@ resource "aws_iam_role" "webserver_role" {
 }
 EOF
 }
+
 resource "aws_iam_instance_profile" "webserver_profile" {
   name = "webserver_profile"
   role = "${aws_iam_role.webserver_role.name}"
