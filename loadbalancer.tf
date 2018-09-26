@@ -13,7 +13,7 @@ resource "aws_lb" "otto_lb" {
 # Target Group #
 #---------------------------------------------#
 resource "aws_alb_target_group" "lb_frontend_http" {
-  name     = "lb_frontend_http"
+  name     = "lb-frontend-http"
   port     = "80"
   vpc_id   = "${aws_vpc.otto_vpc.id}"
   protocol = "HTTP"
