@@ -40,7 +40,7 @@ sleep 300
 ### Set up DB
 
 # Set DB password
-export DB="324neWWEkdn31ejkjrr"
+export DB="sup3rs3cr3tpassw0rd"
 
 # Create DB table
 mysql -h database -u serverAdmin -p$DB -e "CREATE TABLE p2db.records (record_id BIGINT AUTO_INCREMENT,record_type VARCHAR(255) NULL,record_result VARCHAR(255) NULL,record_tag VARCHAR(255) NULL,PRIMARY KEY (record_id));"

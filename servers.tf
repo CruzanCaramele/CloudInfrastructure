@@ -22,7 +22,7 @@ resource "aws_db_instance" "otto_db" {
   name                   = "otto_db"
   engine                 = "mysql"
   username               = "administrator"
-  password               = "$erverP@$$w0rd"
+  password               = "sup3rs3cr3tpassw0rd"
   storage_type           = "gp2"
   engine_version         = "5.7"
   instance_class         = "${var.db_instance_class}"
