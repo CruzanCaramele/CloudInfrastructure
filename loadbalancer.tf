@@ -2,7 +2,7 @@
 # Application Load Balancer #
 #---------------------------------------------#
 resource "aws_lb" "otto_lb" {
-  name               = "otto_lb"
+  name               = "otto-lb"
   internal           = false
   subnets            = ["${aws_subnet.public_webserver_zone_a.id}", "${aws_subnet.public_webserver_zone_b.id}"]
   security_groups    = ["${aws_security_group.load_balancer_security_group.id}"]
