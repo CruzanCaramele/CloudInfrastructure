@@ -9,8 +9,8 @@ resource "random_id" "prod_bucket_id" {
 # S3 bucket #
 #---------------------------------------------#
 resource "aws_s3_bucket" "otto_bucket" {
-    bucket = "otto-bucket-${random_id.prod_bucket_id.dec}"
-    acl = "private"
+  bucket = "otto-bucket-${random_id.prod_bucket_id.dec}"
+  acl    = "private"
 }
 
 resource "aws_s3_bucket_object" "server-files" {
