@@ -71,3 +71,8 @@ variable "db_instance_class" {
   description = "instance type for database"
   default     = ""
 }
+
+variable "dns_zone" {
+  description = "zone for record"
+  default     = ""
+}
