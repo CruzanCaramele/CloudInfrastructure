@@ -53,3 +53,21 @@ variable "private_subnet_db_b_cidr" {
   description = "database cidr subnet b"
   default     = ""
 }
+
+#---------------------------------------------#
+# Compute variables #
+#---------------------------------------------#
+variable "webserver_instance_type" {
+  description = "instance type for webservers"
+  default     = ""
+}
+
+variable "permit_key" {
+  description = "SSH key"
+  default     = ""
+}
+
+variable "db_instance_class" {
+  description = "instance type for database"
+  default     = ""
+}
