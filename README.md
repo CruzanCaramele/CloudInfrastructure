@@ -4,10 +4,10 @@
 ![Infrastructure](static/infrastructure.png)
 
 
-## Launch Infrastructure
+#### Launch Infrastructure
 
-* Clone the project - `git clone url`
-* Create a file called `terraform.tfvars` and add your access key and secret key for your proper IAM user like so:
+* Clone the the repo - `git clone url`
+* Create a file called `terraform.tfvars` and add your AWS access key and secret key for your proper IAM user like so:
 
 ```
 access_key = "YOUR_ACCESS_KEY"
