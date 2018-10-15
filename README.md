@@ -1,9 +1,3 @@
-#### 3 Tier Cloud Infrastructure 
-
-
-![Infrastructure](static/infrastructure.png)
-
-
 #### Launch Infrastructure
 
 * Clone the the repo - `git clone url`
@@ -26,6 +20,12 @@ public_subnet_bastion_a_cidr = "10.0.5.0/24"
 public_subnet_bastion_b_cidr = "10.0.6.0/24"
 
 ```
+
+#### 3 Tier Cloud Infrastructure 
+
+
+![Infrastructure](static/infrastructure.png)
+
 
 * Initialize Terraform - `terraform init`
 * Run it = `./launch.sh`
